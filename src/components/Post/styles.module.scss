@@ -2,8 +2,29 @@
 
 .postTitle {
   font-size: 2.9rem;
-  margin: 2rem 0 2rem 0;
+  line-height: 1.2;
+  margin: 0.5rem 0 2rem 0;
   font-weight: bold;
+}
+
+.postDate {
+  color: $lightTextColor;
+  margin-bottom: 2rem;
+}
+
+.backButton {
+  font-family: -apple-system, BlinkMacSystemFont, 'system-ui', $baseFontFace;
+  display: block;
+  padding: 30px 50px;
+  margin: -30px -50px;
+  font-size: 2rem;
+  text-decoration: none;
+  color: $highlightTextColor;
+  transition: transform 200ms ease;
+
+  &:hover {
+    transform: translate3d(-10px, 0, 0);
+  }
 }
 
 .postContent {
@@ -14,9 +35,13 @@
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: normal;
     margin: 2rem 0 0.5rem 0;
+
+    & + p {
+      margin-top: 0.9rem;
+    }
   }
 
   h3 {
@@ -29,6 +54,16 @@
     line-height: 1.5;
   }
 
+  a {
+    color: $highlightTextColor;
+    text-decoration: none;
+
+    &:hover {
+      background: $highlightTextColor;
+      color: #fff;
+    }
+  }
+
   p + p {
     margin-top: 0.9rem;
   }
@@ -38,7 +73,7 @@
     margin: 1rem 0 2rem;
 
     li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
       position: relative;
     }
   }
@@ -90,16 +125,113 @@
   blockquote {
     margin: 2rem 0;
     padding: 10px 0 10px 20px;
-    border-left: 3px solid green;
-
-    p {
-      line-height: 1.8rem;
-    }
+    border-left: 3px solid $highlightTextColor;
   }
 
   hr {
     border: none;
-    border-top: 2px solid red;
+    border-top: 2px solid $lightBackgroundColor;
     margin: 24px 0;
+  }
+}
+
+/**
+ * Syntax highlighting
+ */
+:global {
+  // Inline code snippets
+  code {
+    font-family: $monoFontFamily;
+    font-size: 0.8rem;
+    background: $lightBackgroundColor;
+    padding: 3px 6px;
+    display: inline-block;
+    border-radius: 2px;
+    margin: 0 5px;
+  }
+
+  // Code blocks
+  pre {
+    code {
+      padding: 0;
+      background: none;
+      font-size: 0.8rem;
+      white-space: pre-wrap;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+  }
+
+  .gatsby-highlight {
+    font-family: $monoFontFamily;
+    background: $syntaxThemeColor00;
+    color: $syntaxThemeColor01;
+    font-size: 0.95em;
+    line-height: 1.2em;
+    margin: 1.5rem 0;
+    padding: 16px;
+    border-radius: 2px;
+
+    .token.tag,
+    .token.attr-name,
+    .token.namespace,
+    .token.deleted,
+    .token.property,
+    .token.class-name,
+    .token.constant,
+    .token.symbol {
+      color: $syntaxThemeColor01;
+    }
+
+    .token.block-comment,
+    .token.comment,
+    .token.prolog,
+    .token.doctype,
+    .token.punctuation,
+    .token.cdata {
+      color: $syntaxThemeColor02;
+    }
+
+    .token.operator,
+    .token.entity,
+    .token.url {
+      color: $syntaxThemeColor03;
+    }
+
+    .token.boolean,
+    .token.number,
+    .token.function {
+      color: $syntaxThemeColor04;
+    }
+
+    .token.string,
+    .token.char,
+    .token.attr-value,
+    .token.regex,
+    .token.variable {
+      color: $syntaxThemeColor05;
+    }
+
+    .token.function-name,
+    .token.selector,
+    .token.important,
+    .token.atrule,
+    .token.keyword,
+    .token.builtin {
+      color: $syntaxThemeColor06;
+    }
+
+    .token.important,
+    .token.bold {
+      font-weight: bold;
+    }
+
+    .token.italic {
+      font-style: italic;
+    }
+
+    .token.entity {
+      cursor: help;
+    }
   }
 }

@@ -1,7 +1,4 @@
 module.exports = {
-  siteMetadata: {
-    title: 'Thousandfive',
-  },
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',

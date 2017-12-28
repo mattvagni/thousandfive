@@ -1,0 +1,15 @@
+@import '../../variables.scss';
+
+.wrapper {
+  margin: 2rem 0 3rem;
+}
+
+.logo {
+  font-family: $monoFontFamily;
+  color: $lightTextColor;
+  text-decoration: none;
+
+  &:hover {
+    color: $highlightTextColor;
+  }
+}
