@@ -1,7 +1,6 @@
 {
-  "name": "gatsby-starter-hello-world",
-  "description": "Gatsby hello world starter",
-  "license": "MIT",
+  "name": "thousandfive",
+  "description": "Mathias Vagni's personal website.",
   "scripts": {
     "dev": "gatsby develop",
     "build": "gatsby build",
@@ -13,7 +12,8 @@
     "gatsby": "^1.9.145",
     "gatsby-link": "^1.6.32",
     "gatsby-source-filesystem": "^1.5.11",
-    "gatsby-transformer-remark": "^1.7.26"
+    "gatsby-transformer-remark": "^1.7.26",
+    "reset-css": "^2.2.1"
   },
   "devDependencies": {
     "eslint": "^4.14.0",

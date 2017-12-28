@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// Global reset styles.
+import 'reset-css/reset.css';
+
 const LayoutIndex = (props) => (
-  <div style={{ outline: '1px solid red' }}>
+  <div>
     <h1>{props.data.site.siteMetadata.title}</h1>
     <div>{props.children()}</div>
   </div>
