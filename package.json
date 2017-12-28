@@ -3,7 +3,7 @@
   "description": "Gatsby hello world starter",
   "license": "MIT",
   "scripts": {
-    "develop": "gatsby develop",
+    "dev": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "lint": "eslint src/**/*.js",
@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "gatsby": "^1.9.145",
-    "gatsby-link": "^1.6.32"
+    "gatsby-link": "^1.6.32",
+    "gatsby-source-filesystem": "^1.5.11",
+    "gatsby-transformer-remark": "^1.7.26"
   },
   "devDependencies": {
     "eslint": "^4.14.0",

@@ -1,10 +1,17 @@
 {
-  "extends": [
-    "airbnb",
-    "eslint-config-prettier"
-  ],
+  "extends": ["airbnb", "eslint-config-prettier"],
+  "globals": {
+    "graphql": true
+  },
   "rules": {
     "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["to"]
+      }
+    ],
     "import/no-extraneous-dependencies": ["off"]
   }
 }
