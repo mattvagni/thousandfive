@@ -33,7 +33,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       result.data.allMarkdownRemark.edges.map(({ node }) => {
         createPage({
           path: node.fields.slug,
-          component: path.resolve(`./src/layouts/post.js`),
+          component: path.resolve('./src/components/Post/index.js'),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
             slug: node.fields.slug,

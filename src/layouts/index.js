@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-// Global reset styles.
 import 'reset-css/reset.css';
 
+import styles from './styles.module.scss';
+
 const LayoutIndex = (props) => (
-  <div>
+  <div className={styles.wrapper}>
     <h1>{props.data.site.siteMetadata.title}</h1>
     <div>{props.children()}</div>
   </div>

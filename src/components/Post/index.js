@@ -2,12 +2,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import styles from './styles.module.scss';
+
 const LayoutPost = ({ data }) => {
   const post = data.markdownRemark;
   return (
-    <div style={{ outline: '1px solid green' }}>
-      <h1>{post.frontmatter.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+    <div className={styles.wrapper}>
+      <h1 className={styles.postTitle}>{post.frontmatter.title}</h1>
+      <div
+        className={styles.postContent}
+        dangerouslySetInnerHTML={{ __html: post.html }}
+      />
     </div>
   );
 };
