@@ -5,7 +5,7 @@ import Link from 'gatsby-link';
 import MarkdownWrapper from '../MarkdownWrapper';
 import styles from './styles.module.scss';
 
-const LayoutPost = ({ data }) => {
+const Post = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div className={styles.wrapper}>
@@ -23,7 +23,7 @@ const LayoutPost = ({ data }) => {
   );
 };
 
-LayoutPost.propTypes = {
+Post.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.shape({
       post: PropTypes.shape({
@@ -48,4 +48,4 @@ export const query = graphql`
   }
 `;
 
-export default LayoutPost;
+export default Post;

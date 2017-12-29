@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.wrapper {
+  margin-top: 48px;
+}
+
+.title {
+  font-size: 0.9rem;
+}
+
+.list {
+  border-top: 2px solid $mediumBackgroundColor;
+  margin-top: 16px;
+}
+
+.post {
+  border-bottom: 2px solid $mediumBackgroundColor;
+}
+
+.postLink {
+  text-decoration: none;
+  display: block;
+  padding: 1.5rem 0;
+
+  &:hover {
+    .postTitle {
+      color: $highlightTextColor;
+    }
+  }
+}
+
+.postTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.postDate {
+  color: $lightTextColor;
+  font-size: 0.95rem;
+}

@@ -1,65 +1,48 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 
 import MarkdownWrapper from '../components/MarkdownWrapper';
+import PostsList from '../components/PostsList';
 import styles from './styles.module.scss';
 
 const PagesIndex = ({ data }) => (
-  <div>
-    <h1 className={styles.title}>
-      {'Hey there,'}
-      <br />
-      {"I'm Matt."}
-    </h1>
-    <div className={styles.bio}>
-      <MarkdownWrapper html={data.intro.edges[0].node.html} />
+    <div>
+      <h1 className={styles.title}>
+        {'Hey there,'}
+        <br />
+        {"I'm Matt."}
+      </h1>
+      <div className={styles.bio}>
+        <MarkdownWrapper html={data.bio.edges[0].node.html} />
+        <PostsList posts={data.posts} />
+      </div>
     </div>
-    <ul>
-      {data.posts.edges.map(({ node }) => (
-        <li key={node.id}>
-          <Link
-            to={node.fields.path}
-            style={{ textDecoration: `none`, color: `inherit` }}
-          >
-            {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
+  );
 
 PagesIndex.propTypes = {
   data: PropTypes.shape({
-    posts: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          id: PropTypes.string,
-          fields: PropTypes.shape({
-            path: PropTypes.string,
-          }),
-          frontmatter: PropTypes.shape({
-            title: PropTypes.string,
-            date: PropTypes.string,
-          }),
-        }),
-      ),
-    }),
-    intro: PropTypes.shape({
+    bio: PropTypes.shape({
       edges: PropTypes.arrayOf(
         PropTypes.shape({
           html: PropTypes.string,
         }),
       ),
-    }).isRequired,
+    }),
   }).isRequired,
 };
 
 export const query = graphql`
   query IndexQuery {
+    bio: allMarkdownRemark(
+      filter: { fields: { path: { eq: "/pages/bio/" } } }
+    ) {
+      edges {
+        node {
+          html
+        }
+      }
+    }
     posts: allMarkdownRemark(filter: { fields: { isPost: { eq: true } } }) {
-      totalCount
       edges {
         node {
           id
@@ -70,15 +53,6 @@ export const query = graphql`
           fields {
             path
           }
-        }
-      }
-    }
-    intro: allMarkdownRemark(
-      filter: { fields: { path: { eq: "/pages/bio/" } } }
-    ) {
-      edges {
-        node {
-          html
         }
       }
     }
