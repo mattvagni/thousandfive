@@ -5,12 +5,22 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
   if (node.internal.type === 'MarkdownRemark') {
-    const slug = createFilePath({ node, getNode, basePath: `content` });
-    console.log('SLUG:', slug);
+    const urlPath = createFilePath({ node, getNode, basePath: `content` });
+
     createNodeField({
       node,
-      name: 'slug',
-      value: slug,
+      name: 'path',
+      value: urlPath,
+    });
+    createNodeField({
+      node,
+      name: 'isPage',
+      value: urlPath.startsWith('/pages/'),
+    });
+    createNodeField({
+      node,
+      name: 'isPost',
+      value: urlPath.startsWith('/posts/'),
     });
   }
 };
@@ -24,24 +34,25 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           edges {
             node {
               fields {
-                slug
+                path
               }
             }
           }
         }
       }
-    `).then((result) => {
-      result.data.allMarkdownRemark.edges.map(({ node }) => {
-        createPage({
-          path: node.fields.slug,
-          component: path.resolve('./src/components/Post/index.js'),
-          context: {
-            // Data passed to context is available in page queries as GraphQL variables.
-            slug: node.fields.slug,
-          },
+    `)
+      .then((result) => {
+        result.data.allMarkdownRemark.edges.map(({ node }) => {
+          createPage({
+            path: node.fields.path,
+            component: path.resolve('./src/components/Post/index.js'),
+            context: {
+              path: node.fields.path,
+            },
+          });
         });
-      });
-      resolve();
-    });
+        resolve();
+      })
+      .catch(reject);
   });
 };

@@ -37,8 +37,8 @@ LayoutPost.propTypes = {
 };
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+  query BlogPostQuery($path: String!) {
+    markdownRemark(fields: { path: { eq: $path } }) {
       html
       frontmatter {
         title
