@@ -1,0 +1,24 @@
+@import '../../variables.scss';
+
+.wrapper {
+  margin: 3rem 0;
+}
+
+.linkWrapper {
+  & + &:before {
+    content: '•';
+    display: inline-block;
+    margin: 0 8px;
+    color: $lightTextColor;
+  }
+}
+
+.link {
+  text-decoration: none;
+  color: $lightTextColor;
+
+  &:hover {
+    background-color: $highlightTextColor;
+    color: #fff;
+  }
+}
