@@ -9,7 +9,7 @@ const links = [
   },
   {
     label: 'Linkedin',
-    href: 'www.linkedin.com/in/mathias-vagni-24a68228',
+    href: 'https://www.linkedin.com/in/mathias-vagni-24a68228',
   },
   {
     label: 'Twitter',
@@ -20,7 +20,7 @@ const links = [
 const Footer = () => (
   <div className={styles.wrapper}>
     {links.map((link) => (
-      <span className={styles.linkWrapper}>
+      <span key={link.label} className={styles.linkWrapper}>
         <a className={styles.link} href={link.href}>
           {link.label}
         </a>
