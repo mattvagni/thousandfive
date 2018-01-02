@@ -6,18 +6,18 @@ import PostsList from '../components/PostsList';
 import styles from './styles.module.scss';
 
 const PagesIndex = ({ data }) => (
-    <div>
-      <h1 className={styles.title}>
-        {'Hey there,'}
-        <br />
-        {"I'm Matt."}
-      </h1>
-      <div className={styles.bio}>
-        <MarkdownWrapper html={data.bio.edges[0].node.html} />
-        <PostsList posts={data.posts} />
-      </div>
+  <div>
+    <h1 className={styles.title}>
+      {'Hey there,'}
+      <br />
+      {"I'm Matt."}
+    </h1>
+    <div className={styles.bio}>
+      <MarkdownWrapper html={data.bio.edges[0].node.html} />
+      <PostsList posts={data.posts} />
     </div>
-  );
+  </div>
+);
 
 PagesIndex.propTypes = {
   data: PropTypes.shape({
@@ -42,7 +42,10 @@ export const query = graphql`
         }
       }
     }
-    posts: allMarkdownRemark(filter: { fields: { isPost: { eq: true } } }) {
+    posts: allMarkdownRemark(
+      filter: { fields: { isPost: { eq: true } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           id

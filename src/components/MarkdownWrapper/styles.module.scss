@@ -10,7 +10,7 @@
   h2 {
     font-size: 1.6rem;
     font-weight: normal;
-    margin: 2rem 0 0.5rem 0;
+    margin: 2.5rem 0 0.5rem 0;
 
     & + p {
       margin-top: 0.9rem;
@@ -23,7 +23,8 @@
     margin: 2rem 0 0.5rem 0;
   }
 
-  p {
+  p,
+  li {
     line-height: 1.5;
   }
 
@@ -47,7 +48,6 @@
 
     li {
       margin-bottom: 0.8rem;
-      line-height: 1.2;
       position: relative;
     }
   }
@@ -105,7 +105,55 @@
   hr {
     border: none;
     border-top: 2px solid $mediumBackgroundColor;
-    margin: 2.2rem 0 2rem;
+    margin: 3.2rem 0 3rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  figure {
+    margin: 2rem 0;
+
+    img {
+      transform: translateX(-50%);
+      position: relative;
+      left: 50%;
+      top: 0;
+    }
+
+    &:global {
+      // size 'medium'
+      &.medium {
+        img {
+          max-width: 900px;
+
+          @media (max-width: 900px) {
+            width: calc(100vw - 40px);
+          }
+        }
+      }
+
+      // size 'large'
+      &.large {
+        img {
+          max-width: 1400px;
+
+          @media (max-width: 1400px) {
+            width: calc(100vw - 40px);
+          }
+        }
+      }
+    }
+
+    figcaption {
+      color: $lightTextColor;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      text-align: center;
+      font-style: italic;
+    }
   }
 
   /**
