@@ -2,19 +2,23 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import MarkdownWrapper from '../components/MarkdownWrapper';
+import Fluorish from '../components/Fluorish';
 import PostsList from '../components/PostsList';
 import styles from './styles.module.scss';
 
 const PagesIndex = ({ data }) => (
   <div>
-    <h1 className={styles.title}>
-      {'Hey there,'}
-      <br />
-      {"I'm Matt."}
-    </h1>
-    <div className={styles.bio}>
-      <MarkdownWrapper html={data.bio.edges[0].node.html} />
-      <PostsList posts={data.posts} />
+    <Fluorish />
+    <div className={styles.content}>
+      <h1 className={styles.title}>
+        {'Hey there,'}
+        <br />
+        {"I'm Matt."}
+      </h1>
+      <div className={styles.bio}>
+        <MarkdownWrapper html={data.bio.edges[0].node.html} />
+        <PostsList posts={data.posts} />
+      </div>
     </div>
   </div>
 );

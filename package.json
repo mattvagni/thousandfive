@@ -9,6 +9,7 @@
     "format": "prettier --write src/**/*.js"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "gatsby": "^1.9.145",
     "gatsby-link": "^1.6.32",
     "gatsby-plugin-sass": "^1.0.15",
