@@ -1,0 +1,48 @@
+{
+  "assetsByChunkName": {
+    "path---posts-cookiecutter": [
+      "path---posts-cookiecutter-09c40f914d26ca406307.js",
+      "path---posts-cookiecutter-09c40f914d26ca406307.js.map"
+    ],
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js-204b151648c39d13b727.js",
+      "component---src-pages-index-js-204b151648c39d13b727.js.map"
+    ],
+    "path---": [
+      "path----557518bd178906f8d58a.js",
+      "path----557518bd178906f8d58a.js.map"
+    ],
+    "component---src-layouts-index-js": [
+      "component---src-layouts-index-js-961b0fe77ee6d8327378.js",
+      "component---src-layouts-index-js-961b0fe77ee6d8327378.js.map"
+    ],
+    "path---index": [
+      "path---index-f9094d4ae498433aeea5.js",
+      "path---index-f9094d4ae498433aeea5.js.map"
+    ],
+    "commons": [
+      "commons-0da3130a40231805cb67.js",
+      "build-js-styles.css",
+      "commons-0da3130a40231805cb67.js.map",
+      "build-js-styles.css.map"
+    ],
+    "path---posts-ssr-css-modules": [
+      "path---posts-ssr-css-modules-f8514840052ecaaf5a0a.js",
+      "path---posts-ssr-css-modules-f8514840052ecaaf5a0a.js.map"
+    ],
+    "path---pages-bio": [
+      "path---pages-bio-bf981131b87d240690f6.js",
+      "path---pages-bio-bf981131b87d240690f6.js.map"
+    ],
+    "component---src-components-post-index-js": [
+      "component---src-components-post-index-js-0eadeb21472a23bfe87f.js",
+      "component---src-components-post-index-js-0eadeb21472a23bfe87f.js.map"
+    ],
+    "app": [
+      "app-3bc0aaca32f5c8ffaa66.js",
+      "build-js-styles.css",
+      "app-3bc0aaca32f5c8ffaa66.js.map",
+      "build-js-styles.css.map"
+    ]
+  }
+}
