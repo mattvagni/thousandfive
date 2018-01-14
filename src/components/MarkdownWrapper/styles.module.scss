@@ -130,7 +130,7 @@
           max-width: 900px;
 
           @media (max-width: 900px) {
-            width: calc(100vw - 40px);
+            width: calc(100vw);
           }
         }
       }
@@ -141,7 +141,7 @@
           max-width: 1400px;
 
           @media (max-width: 1400px) {
-            width: calc(100vw - 40px);
+            width: calc(100vw);
           }
         }
       }
