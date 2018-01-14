@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .wrapper {
   position: relative;
   height: 200px;
@@ -30,7 +32,7 @@
 .square .inner {
   width: 110px;
   height: 110px;
-  background: #57829d;
+  background: $fluorishColor01;
   border-radius: 4px;
   transition-delay: 200ms;
   transform-origin: bottom right;
@@ -45,7 +47,7 @@
 .circle .inner {
   width: 55px;
   height: 55px;
-  background: #ffe4ae;
+  background: $fluorishColor02;
   border-radius: 50%;
   transition-delay: 600ms;
 }
@@ -60,6 +62,6 @@
   width: 155px;
   height: 12px;
   border-radius: 6px;
-  background-color: #ffbebe;
+  background-color: $fluorishColor03;
   transition-delay: 100ms;
 }

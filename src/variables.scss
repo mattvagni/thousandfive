@@ -3,11 +3,16 @@ $baseFontFace: 'IBM Plex Sans';
 $baseFontFamily: $baseFontFace, 'system-ui', sans-serif;
 $monoFontFamily: 'Menlo', 'Source Code Pro', serif;
 
+// Brand colors
+$fluorishColor01: #3f90ff; // square
+$fluorishColor02: #ffe4ae; // circle
+$fluorishColor03: #ffbebe; // line
+
 // Colors
 $lightBackgroundColor: #f5f9fb;
 $mediumBackgroundColor: #ced6da;
 $lightTextColor: #abb4c8;
-$highlightTextColor: #57829d;
+$highlightTextColor: $fluorishColor01;
 
 // Syntax theme
 $syntaxThemeColor00: $lightBackgroundColor;
