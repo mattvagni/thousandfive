@@ -4,9 +4,16 @@ import classnames from 'classnames';
 import styles from './styles.module.scss';
 
 function getScreenWidth() {
+  if (typeof window === 'undefined') {
+    return {
+      width: 0,
+      height: 0,
+    };
+  }
+
   return {
-    width: window ? window.innerWidth : 0,
-    height: window ? window.innerHeight : 0,
+    width: window.innerWidth,
+    height: window.innerHeight,
   };
 }
 
