@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 
@@ -9,6 +10,9 @@ const Post = ({ data }) => {
   const post = data.markdownRemark;
   return (
     <div className={styles.wrapper}>
+      <Helmet>
+        <title>{`1005 • ${post.frontmatter.title}`}</title>
+      </Helmet>
       <Link to="/" className={styles.backButton}>
         {'←'}
       </Link>
