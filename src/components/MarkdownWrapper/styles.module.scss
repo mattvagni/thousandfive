@@ -156,11 +156,23 @@
     }
   }
 
-  /**
-   * Syntax highlighting
-   */
   :global {
-    // Inline code snippets
+    /**
+     * Custom markdown blocks
+     */
+    .custom-block {
+      margin: 2rem 0;
+      padding: 1rem;
+      border-radius: 3px;
+
+      &.warning {
+        background: $warningBackgroundColor;
+      }
+    }
+
+    /**
+     * Inline Code Block
+     */
     code {
       font-family: $monoFontFamily;
       font-size: 0.8rem;
@@ -171,7 +183,9 @@
       margin: 0 5px;
     }
 
-    // Code blocks
+    /**
+     * Bigger Code Blocks
+     */
     pre {
       code {
         padding: 0;

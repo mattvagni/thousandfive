@@ -20,6 +20,14 @@ module.exports = {
               ignoreFileExtensions: [],
             },
           },
+          {
+            resolve: 'gatsby-remark-custom-blocks',
+            options: {
+              blocks: {
+                warning: 'custom-block warning',
+              },
+            },
+          },
         ],
       },
     },

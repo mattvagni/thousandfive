@@ -1,11 +1,16 @@
 ---
-title:  "Server side rendering with CSS modules"
+title:  "Server side rendering with CSS Modules"
 date: 2017-01-16
 ---
 
-It’s currently still relatively hard to understand how to use CSS modules on the server & client based on existing docs. A large part of that I think is that there are generally a lot of moving parts and no definitive way to do anything. If you’ve never worked with CSS modules for real you probably have at least a few of these questions floating around regarding the actual technical set-up: Do you use some require hook on the server? Can’t you just Webpack your backend ? What does babel do with css modules? How do I use sass/post-css/both? How does it work when you are working on a project and want to watch for changes?
+[[warning]]
+| **Be Warned:** This post is quite old and probably out-of-date.
+|
+| It is still useful as an explanation on how CSS Modules technically work but these specific instructions and set of tools might no longer be considered best-practice.
 
-For the sake of this I won’t be using React or anything like that. It’s completely irrelevant to how CSS modules work & there are many great tutorials on how to use React on the server & client. I’ll instead use a super simple example file which literally just console.logs a bit of html with the right selectors. This, I think, makes it a lot easier to understand what’s going on since there are a lot fewer moving parts.
+It’s currently still relatively hard to understand how to use CSS Modules on the server & client based on existing docs. A large part of that I think is that there are generally a lot of moving parts and no definitive way to do anything. If you’ve never worked with CSS Modules for real you probably have at least a few of these questions floating around regarding the actual technical set-up: Do you use some require hook on the server? Can’t you just Webpack your backend ? What does babel do with CSS Modules? How do I use sass/post-css/both? How does it work when you are working on a project and want to watch for changes?
+
+For the sake of this I won’t be using React or anything like that. It’s completely irrelevant to how CSS Modules work & there are many great tutorials on how to use React on the server & client. I’ll instead use a super simple example file which literally just console.logs a bit of html with the right selectors. This, I think, makes it a lot easier to understand what’s going on since there are a lot fewer moving parts.
 
 > 📢 I will be using Webpack 2 because it’s the future — also it’s just nicer to configure loaders (no more crazy query strings).
 
@@ -192,9 +197,9 @@ The config for the css-loader looks like this:
 }
 ```
 
-By default what the css-loader does when css modules are turned on (that’s what `modules: true` does) is extract the css & and the selectors and make them available to you in javascript in the form of a string and a mapping of selectors.
+By default what the css-loader does when CSS Modules are turned on (that’s what `modules: true` does) is extract the css & and the selectors and make them available to you in javascript in the form of a string and a mapping of selectors.
 
-> 📢 Side-note: The whole point of css modules is to ‘scope’ css. In order to do this the css-loader modifies your selectors in order to prevent selectors from clashing. This is so two separate css files could have the same selector without them overriding each-other. You can control how your selectors are modified by using the `localIdentName` option. `[hash:8]` outputs the first 8 characters of a hash of the path to the css file + the selector.
+> 📢 Side-note: The whole point of CSS Modules is to ‘scope’ css. In order to do this the css-loader modifies your selectors in order to prevent selectors from clashing. This is so two separate css files could have the same selector without them overriding each-other. You can control how your selectors are modified by using the `localIdentName` option. `[hash:8]` outputs the first 8 characters of a hash of the path to the css file + the selector.
 
 So anyways… by default the css-loader would output this (all comments from Webpack itself):
 
@@ -482,7 +487,7 @@ If we run our client build we’ll now see everything work as before & output th
 }
 ```
 
-This however only works for the Webpack build. In order for this to work for our server build we are going to have to tell the babel css modules plugin to also preprocess css using sass.
+This however only works for the Webpack build. In order for this to work for our server build we are going to have to tell the babel CSS Modules plugin to also preprocess css using sass.
 
 To do this we have an option called `preprocessCss` we can use which takes the path to a file that pre-process our css.
 
