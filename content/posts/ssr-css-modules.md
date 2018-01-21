@@ -4,9 +4,7 @@ date: 2017-01-16
 ---
 
 [[warning]]
-| **Be Warned:** This post is quite old and probably out-of-date.
-|
-| It is still useful as an explanation on how CSS Modules technically work but these specific instructions and set of tools might no longer be considered best-practice.
+| **Be Warned:** While still useful as an explanation on how CSS Modules work, the specific instructions and tools might be out-of-date. This post is quite old.
 
 It’s currently still relatively hard to understand how to use CSS Modules on the server & client based on existing docs. A large part of that I think is that there are generally a lot of moving parts and no definitive way to do anything. If you’ve never worked with CSS Modules for real you probably have at least a few of these questions floating around regarding the actual technical set-up: Do you use some require hook on the server? Can’t you just Webpack your backend ? What does babel do with CSS Modules? How do I use sass/post-css/both? How does it work when you are working on a project and want to watch for changes?
 
