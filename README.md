@@ -1,4 +1,3 @@
-My website.
+Built using gatsby, prettier and all the other hipster thing.
 
-## Running in development
-`gatsby develop`
+Run it locally: `gatsby develop`
