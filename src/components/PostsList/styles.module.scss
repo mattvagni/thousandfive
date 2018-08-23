@@ -5,27 +5,28 @@
 }
 
 .title {
-  font-size: 0.9rem;
+  color: $lightTextColor;
+  // font-size: 0.95rem;
 }
 
 .list {
-  border-top: 2px solid $mediumBackgroundColor;
-  margin-top: 16px;
+  // border-left: 1px solid $mediumBackgroundColor;
+  margin-top: 24px;
 }
 
 .post {
-  border-bottom: 2px solid $mediumBackgroundColor;
+  margin-bottom: 24px;
 }
 
 .postLink {
   text-decoration: none;
   display: block;
-  padding: 1.5rem 0;
+  padding: 0.5rem 0 0.5rem 1rem;
+  border-left: 2px solid $mediumBackgroundColor;
+  transition: border 150ms linear;
 
   &:hover {
-    .postTitle {
-      color: $highlightTextColor;
-    }
+    border-color: $highlightTextColor;
   }
 }
 
