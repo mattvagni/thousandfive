@@ -15,6 +15,10 @@ const links = [
     label: 'Twitter',
     href: 'https://www.twitter.com/mattvagni',
   },
+  {
+    label: 'Email',
+    href: 'mailto:mathiasvagni+1005@gmail.com',
+  },
 ];
 
 const Footer = () => (

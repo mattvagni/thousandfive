@@ -40,6 +40,12 @@ class Fluorish extends Component {
     }
   }
 
+  componentWillUnmount() {
+    window.removeEventListener('deviceorientation', this.onDeviceMotion);
+    document.body.removeEventListener('mousemove', this.onMouseMove);
+    document.body.removeEventListener('mouseleave', this.onMouseLeave);
+  }
+
   onMouseMove(event) {
     this.setState({
       x: event.clientX,
