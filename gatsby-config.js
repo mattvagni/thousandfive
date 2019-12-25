@@ -21,10 +21,15 @@ module.exports = {
             },
           },
           {
-            resolve: 'gatsby-remark-custom-blocks',
+            resolve: "gatsby-remark-custom-blocks",
             options: {
               blocks: {
-                warning: 'custom-block warning',
+                warning: {
+                  classes: "warning",
+                },
+                info: {
+                  classes: "info",
+                },
               },
             },
           },

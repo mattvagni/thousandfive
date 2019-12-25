@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import 'reset-css/reset.css';
 
 import Header from '../Header';
@@ -17,9 +16,5 @@ const Layout = (props) => (
     <Footer />
   </div>
 );
-
-Layout.propTypes = {
-  children: PropTypes.func.isRequired,
-};
 
 export default Layout;
