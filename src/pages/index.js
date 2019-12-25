@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import MarkdownWrapper from '../components/MarkdownWrapper';
 import Fluorish from '../components/Fluorish';
@@ -23,18 +22,6 @@ const PagesIndex = ({ data, location }) => (
     </div>
   </Layout>
 );
-
-PagesIndex.propTypes = {
-  data: PropTypes.shape({
-    bio: PropTypes.shape({
-      edges: PropTypes.arrayOf(
-        PropTypes.shape({
-          html: PropTypes.string,
-        }),
-      ),
-    }),
-  }).isRequired,
-};
 
 export const query = graphql`
   query {

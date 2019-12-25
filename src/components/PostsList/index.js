@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 
 import styles from './styles.module.scss';
@@ -22,22 +21,5 @@ const PostsLists = (props) => (
     </ul>
   </div>
 );
-
-PostsLists.propTypes = {
-  posts: PropTypes.shape({
-    edges: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        fields: PropTypes.shape({
-          path: PropTypes.string,
-        }),
-        frontmatter: PropTypes.shape({
-          title: PropTypes.string,
-          date: PropTypes.string,
-        }),
-      }),
-    ),
-  }).isRequired,
-};
 
 export default PostsLists;

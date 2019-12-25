@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import PropTypes from 'prop-types';
 import { Link, graphql } from 'gatsby';
 
 import MarkdownWrapper from '../MarkdownWrapper';
@@ -28,19 +27,6 @@ const Post = ({ data, location }) => {
     </div>
     </Layout>
   );
-};
-
-Post.propTypes = {
-  data: PropTypes.shape({
-    markdownRemark: PropTypes.shape({
-      post: PropTypes.shape({
-        frontmatter: PropTypes.shape({
-          title: PropTypes.string,
-          html: PropTypes.string,
-        }),
-      }),
-    }),
-  }).isRequired,
 };
 
 export const query = graphql`
