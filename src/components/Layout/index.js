@@ -1,10 +1,9 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import 'reset-css/reset.css';
 
 import Header from '../Header';
 import Footer from '../Footer';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const Layout = (props) => (
   <div className={styles.wrapper}>

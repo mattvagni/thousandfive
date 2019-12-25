@@ -46,9 +46,6 @@ exports.createPages = ({ graphql, actions }) => {
           createPage({
             path: node.fields.path,
             component: path.resolve('./src/components/Post/index.js'),
-            context: {
-              path: node.fields.path,
-            },
           });
         });
         resolve();

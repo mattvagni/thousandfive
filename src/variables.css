@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,600,600i&display=swap');
+
+:root {
+  /* Font families */
+  --baseFontFace: 'IBM Plex Sans';
+  --baseFontFamily: 'IBM Plex Sans', 'system-ui', sans-serif;
+  --monoFontFamily: 'Menlo', 'Source Code Pro', serif;
+
+  /* Brand colors */
+  --fluorishColor01: #345feb; /* square */
+  --fluorishColor02: #ffdfa0; /* circle */
+  --fluorishColor03: #f7a5a5; /* line */
+
+  /* Colors */
+  --lightBackgroundColor: #f5f9fb;
+  --mediumBackgroundColor: #d6dfe4;
+  --lightTextColor: #abb4c8;
+  --highlightTextColor: var(--fluorishColor01);
+  --warningBackgroundColor: var(--fluorishColor02);
+
+  /* Syntax theme */
+  --syntaxThemeColor00: var(--lightBackgroundColor);
+  --syntaxThemeColor01: #1c2325;
+  --syntaxThemeColor02: #93a1a1;
+  --syntaxThemeColor03: #99c794;
+  --syntaxThemeColor04: #ec5f67;
+  --syntaxThemeColor05: #f18100;
+  --syntaxThemeColor06: #5299e0;
+}

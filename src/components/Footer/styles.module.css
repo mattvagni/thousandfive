@@ -1,0 +1,20 @@
+.wrapper {
+  margin: 6rem 0 3rem;
+}
+
+.linkWrapper + .linkWrapper:before {
+  content: '•';
+  display: inline-block;
+  margin: 0 8px;
+  color: var(--lightTextColor);
+}
+
+.link {
+  text-decoration: none;
+  color: var(--lightTextColor);
+
+  &:hover {
+    background-color: var(--highlightTextColor);
+    color: #fff;
+  }
+}

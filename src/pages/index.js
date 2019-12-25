@@ -4,7 +4,7 @@ import MarkdownWrapper from '../components/MarkdownWrapper';
 import Fluorish from '../components/Fluorish';
 import PostsList from '../components/PostsList';
 import Layout from '../components/Layout';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const PagesIndex = ({ data, location }) => (
   <Layout location={location}>
@@ -25,9 +25,7 @@ const PagesIndex = ({ data, location }) => (
 
 export const query = graphql`
   query {
-    bio: allMarkdownRemark(
-      filter: { fields: { path: { eq: "/pages/bio/" } } }
-    ) {
+    bio: allMarkdownRemark(filter: { fields: { path: { eq: "/pages/bio/" } } }) {
       edges {
         node {
           html

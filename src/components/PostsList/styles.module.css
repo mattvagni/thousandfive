@@ -1,16 +1,12 @@
-@import '../../variables.scss';
-
 .wrapper {
   margin-top: 48px;
 }
 
 .title {
-  color: $lightTextColor;
-  // font-size: 0.95rem;
+  color: var(--lightTextColor);
 }
 
 .list {
-  // border-left: 1px solid $mediumBackgroundColor;
   margin-top: 24px;
 }
 
@@ -22,11 +18,11 @@
   text-decoration: none;
   display: block;
   padding: 0.5rem 0 0.5rem 1rem;
-  border-left: 2px solid $mediumBackgroundColor;
+  border-left: 2px solid var(--mediumBackgroundColor);
   transition: border 150ms linear;
 
   &:hover {
-    border-color: $highlightTextColor;
+    border-color: var(--highlightTextColor);
   }
 }
 
@@ -40,6 +36,6 @@
 }
 
 .postDate {
-  color: $lightTextColor;
+  color: var(--lightTextColor);
   font-size: 0.95rem;
 }

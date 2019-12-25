@@ -4,6 +4,6 @@ title: Homepage
 
 I like to design and code simple, usable products.
 
-I am a designer/developer in [Deliveroo's](https://deliveroo.co.uk) UI Infrastructure team. We make it easier for engineers and designers to collaborate by working on our internal design systems, tools and processes.
+I am an designer turned engineer now helping deliver medications at [Echo](https://www.echo.co.uk/) by building warehouse tools and other weird things.
 
-Previously I headed up design at [Lyst](https://lyst.com).
+Previously I worked [Deliveroo's UI Infrastructure](https://www.youtube.com/watch?v=6C0yvuWJc84) team and headed up design at [Lyst](https://lyst.com).

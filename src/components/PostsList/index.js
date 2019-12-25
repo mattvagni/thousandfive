@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const PostsLists = (props) => (
   <div className={styles.wrapper}>

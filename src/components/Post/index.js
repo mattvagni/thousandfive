@@ -4,7 +4,7 @@ import { Link, graphql } from 'gatsby';
 
 import MarkdownWrapper from '../MarkdownWrapper';
 import Layout from '../Layout';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const Post = ({ data, location }) => {
   const post = data.markdownRemark;

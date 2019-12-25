@@ -21,14 +21,14 @@ module.exports = {
             },
           },
           {
-            resolve: "gatsby-remark-custom-blocks",
+            resolve: 'gatsby-remark-custom-blocks',
             options: {
               blocks: {
                 warning: {
-                  classes: "warning",
+                  classes: 'warning',
                 },
                 info: {
-                  classes: "info",
+                  classes: 'info',
                 },
               },
             },
@@ -36,6 +36,11 @@ module.exports = {
         ],
       },
     },
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [require('postcss-nesting')()],
+      },
+    },
   ],
 };

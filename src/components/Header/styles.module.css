@@ -1,0 +1,13 @@
+.wrapper {
+  margin: 2rem 0 3rem;
+}
+
+.logo {
+  font-family: var(--monoFontFamily);
+  color: var(--lightTextColor);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--highlightTextColor);
+  }
+}
