@@ -1,14 +1,16 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 
 import MarkdownWrapper from '../MarkdownWrapper';
+import Layout from '../Layout';
 import styles from './styles.module.scss';
 
-const Post = ({ data }) => {
+const Post = ({ data, location }) => {
   const post = data.markdownRemark;
   return (
+    <Layout location={location}>
     <div className={styles.wrapper}>
       <Helmet>
         <title>{`1005 • ${post.frontmatter.title}`}</title>
@@ -24,6 +26,7 @@ const Post = ({ data }) => {
         <MarkdownWrapper html={post.html} />
       </div>
     </div>
+    </Layout>
   );
 };
 
@@ -41,7 +44,7 @@ Post.propTypes = {
 };
 
 export const query = graphql`
-  query BlogPostQuery($path: String!) {
+  query ($path: String!) {
     markdownRemark(fields: { path: { eq: $path } }) {
       html
       frontmatter {

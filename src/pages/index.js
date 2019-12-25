@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import { graphql } from 'gatsby';
 import MarkdownWrapper from '../components/MarkdownWrapper';
 import Fluorish from '../components/Fluorish';
 import PostsList from '../components/PostsList';
+import Layout from '../components/Layout';
 import styles from './styles.module.scss';
 
-const PagesIndex = ({ data }) => (
-  <div>
+const PagesIndex = ({ data, location }) => (
+  <Layout location={location}>
     <Fluorish />
     <div className={styles.content}>
       <h1 className={styles.title}>
@@ -20,7 +21,7 @@ const PagesIndex = ({ data }) => (
         <PostsList posts={data.posts} />
       </div>
     </div>
-  </div>
+  </Layout>
 );
 
 PagesIndex.propTypes = {
@@ -36,7 +37,7 @@ PagesIndex.propTypes = {
 };
 
 export const query = graphql`
-  query IndexQuery {
+  query {
     bio: allMarkdownRemark(
       filter: { fields: { path: { eq: "/pages/bio/" } } }
     ) {
