@@ -8,9 +8,12 @@ import styles from './styles.module.css';
 
 let defaultTheme = 'light';
 const storageKey = 'theme';
+const isBrowser = () => typeof window !== 'undefined';
 
 try {
-  defaultTheme = localStorage.getItem(storageKey);
+  if (isBrowser()) {
+    defaultTheme = localStorage.getItem(storageKey);
+  }
 } catch (err) {
   console.error(err);
 }
@@ -21,7 +24,9 @@ const Layout = (props) => {
   function toggleTheme() {
     const newValue = theme === 'light' ? 'dark' : 'light';
     setTheme(newValue);
-    localStorage.setItem(storageKey, newValue);
+    if (isBrowser()) {
+      localStorage.setItem(storageKey, newValue);
+    }
     defaultTheme = newValue;
   }
 
