@@ -1,0 +1,54 @@
+.button {
+  background: none;
+  border: none;
+  color: var(--normalTextColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin: -8px -16px;
+}
+
+.toggle {
+  border-radius: 7px;
+  height: 14px;
+  display: inline-block;
+  width: 28px;
+  margin: 2px 0 0 8px;
+  background-color: var(--mediumBackgroundColor);
+  position: relative;
+  transition: 150ms background ease-in-out;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    transition: 150ms transform ease-in-out;
+  }
+
+  &:global {
+    &.dark {
+      background-color: #48c656;
+
+      &::before {
+        background: #1c5a23;
+        transform: translate3d(13px, 0, 0);
+      }
+    }
+
+    &.light {
+      background-color: reed;
+
+      &::before {
+        background: #8c8c8c;
+      }
+    }
+  }
+}

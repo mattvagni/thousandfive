@@ -1,5 +1,9 @@
 .wrapper {
   margin: 96px 0 48px;
+
+  @media (min-width: 900px) {
+    display: flex;
+  }
 }
 
 .linkWrapper + .linkWrapper:before {
@@ -16,6 +20,14 @@
 
   &:hover {
     background-color: var(--highlightTextColor);
-    color: #fff;
+    color: var(--highlightTextHoverColor);
+  }
+}
+
+.links {
+  flex: 1;
+
+  @media (max-width: 900px) {
+    margin-bottom: 24px;
   }
 }

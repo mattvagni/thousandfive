@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ThemeToggleButton from '../ThemeSwitcherButton';
 import styles from './styles.module.css';
 
 const links = [
@@ -21,15 +21,18 @@ const links = [
   },
 ];
 
-const Footer = () => (
+const Footer = (props) => (
   <div className={styles.wrapper}>
-    {links.map((link) => (
-      <span key={link.label} className={styles.linkWrapper}>
-        <a className={styles.link} href={link.href}>
-          {link.label}
-        </a>
-      </span>
-    ))}
+    <div className={styles.links}>
+      {links.map((link) => (
+        <span key={link.label} className={styles.linkWrapper}>
+          <a className={styles.link} href={link.href}>
+            {link.label}
+          </a>
+        </span>
+      ))}
+    </div>
+    <ThemeToggleButton onToggle={props.onToggleTheme} theme={props.theme} />
   </div>
 );
 

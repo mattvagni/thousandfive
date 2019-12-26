@@ -5,18 +5,49 @@
   --baseFontFace: 'IBM Plex Sans';
   --baseFontFamily: 'IBM Plex Sans', 'system-ui', sans-serif;
   --monoFontFamily: 'Menlo', 'Source Code Pro', serif;
+}
 
+.lightMode {
   /* Brand colors */
   --fluorishColor01: #345feb; /* square */
   --fluorishColor02: #ffdfa0; /* circle */
   --fluorishColor03: #f7a5a5; /* line */
 
   /* Colors */
-  --lightBackgroundColor: #f5f9fb;
+  --lightBackgroundColor: #ffffff;
   --mediumBackgroundColor: #d6dfe4;
+  --normalTextColor: #101c32;
   --lightTextColor: #abb4c8;
   --highlightTextColor: var(--fluorishColor01);
+  --highlightTextHoverColor: #ffffff;
   --warningBackgroundColor: var(--fluorishColor02);
+  --warningTextColor: var(--normalTextColor);
+
+  /* Syntax theme */
+  --syntaxThemeColor00: #101c32;
+  --syntaxThemeColor01: #cdd2d6;
+  --syntaxThemeColor02: #5e7877;
+  --syntaxThemeColor03: #66cec4;
+  --syntaxThemeColor04: #ffa1c5;
+  --syntaxThemeColor05: #f3c384;
+  --syntaxThemeColor06: #88ace8;
+}
+
+.darkMode {
+  /* Brand colors */
+  --fluorishColor01: #e84d69; /* square */
+  --fluorishColor02: #ffdfa0; /* circle */
+  --fluorishColor03: #6adabc; /* line */
+
+  /* Colors */
+  --lightBackgroundColor: #060e1c;
+  --mediumBackgroundColor: #162746;
+  --normalTextColor: #cdd2d6;
+  --lightTextColor: #616c82;
+  --highlightTextColor: var(--fluorishColor01);
+  --highlightTextHoverColor: #ffffff;
+  --warningBackgroundColor: #ffb100;
+  --warningTextColor: #060e1c;
 
   /* Syntax theme */
   --syntaxThemeColor00: #101c32;

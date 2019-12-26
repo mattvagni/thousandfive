@@ -32,7 +32,7 @@
 
     &:hover {
       background: var(--highlightTextColor);
-      color: #fff;
+      color: var(--highlightTextHoverColor);
     }
   }
 
@@ -182,10 +182,10 @@
 
       &.warning {
         background: var(--warningBackgroundColor);
+        color: var(--warningTextColor);
       }
 
       &.note {
-        /* background: var(--mediumBackgroundColor); */
         border: 3px solid var(--mediumBackgroundColor);
         border-radius: 6px;
       }
@@ -272,12 +272,12 @@
         letter-spacing: 0.075em;
         line-height: 1;
         position: absolute;
-        right: 24px;
+        right: 16px;
         text-align: right;
         text-transform: uppercase;
         top: 0px;
-        border-radius: 0px 0px 4px 4px;
-        padding: 0.25rem 0.5rem;
+        border-radius: 0 0 4px 4px;
+        padding: 5px 6px 5px 7px;
       }
 
       & pre[class='language-js']::before,

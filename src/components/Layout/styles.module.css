@@ -1,4 +1,12 @@
 .wrapper {
+  font-family: var(--baseFontFace);
+  color: var(--normalTextColor);
+  background: var(--lightBackgroundColor);
+  font-size: 18px;
+  transition: 150ms background linear;
+}
+
+.content {
   max-width: 660px;
   margin: 0 auto;
   padding: 16px;
