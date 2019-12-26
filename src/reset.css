@@ -137,3 +137,11 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+a {
+  outline: none;
+}
+
+a:focus {
+  box-shadow: var(--focusShadowColor) 0px 0px 0px 3px;
+}

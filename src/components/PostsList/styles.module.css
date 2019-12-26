@@ -34,7 +34,12 @@
     border-radius: 6px;
   }
 
-  &:hover::before {
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:hover::before,
+  &:focus::before {
     background: var(--highlightTextColor);
   }
 }

@@ -7,8 +7,20 @@
   align-items: center;
   font-size: 16px;
   cursor: pointer;
-  padding: 8px 16px;
-  margin: -8px -16px;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  outline: none;
+
+  &:focus .toggle {
+    &:global {
+      &.dark {
+        box-shadow: var(--focusShadowColor) 0px 0px 0px 3px;
+      }
+      &.light {
+        box-shadow: var(--focusShadowColor) 0px 0px 0px 3px;
+      }
+    }
+  }
 }
 
 .toggle {

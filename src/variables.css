@@ -22,6 +22,7 @@
   --highlightTextHoverColor: #ffffff;
   --warningBackgroundColor: var(--fluorishColor02);
   --warningTextColor: var(--normalTextColor);
+  --focusShadowColor: rgba(255, 170, 43, 0.76);
 
   /* Syntax theme */
   --syntaxThemeColor00: #101c32;
@@ -35,9 +36,9 @@
 
 .darkMode {
   /* Brand colors */
-  --fluorishColor01: #e84d69; /* square */
+  --fluorishColor01: #00a1ff; /* square */
   --fluorishColor02: #ffdfa0; /* circle */
-  --fluorishColor03: #6adabc; /* line */
+  --fluorishColor03: #f7a5a5; /* line */
 
   /* Colors */
   --lightBackgroundColor: #060e1c;
@@ -45,9 +46,10 @@
   --normalTextColor: #cdd2d6;
   --lightTextColor: #616c82;
   --highlightTextColor: var(--fluorishColor01);
-  --highlightTextHoverColor: #ffffff;
-  --warningBackgroundColor: #ffb100;
+  --highlightTextHoverColor: #000000;
+  --warningBackgroundColor: #ffc85f;
   --warningTextColor: #060e1c;
+  --focusShadowColor: #ffc762;
 
   /* Syntax theme */
   --syntaxThemeColor00: #101c32;
