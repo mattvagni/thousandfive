@@ -1,5 +1,5 @@
 .wrapper {
-  margin: 6rem 0 3rem;
+  margin: 96px 0 48px;
 }
 
 .linkWrapper + .linkWrapper:before {
@@ -10,6 +10,7 @@
 }
 
 .link {
+  font-size: 16px;
   text-decoration: none;
   color: var(--lightTextColor);
 

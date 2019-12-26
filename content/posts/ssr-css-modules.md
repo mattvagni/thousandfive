@@ -1,5 +1,5 @@
 ---
-title:  "Server side rendering with CSS Modules"
+title: 'Server side rendering with CSS Modules'
 date: 2017-01-16
 ---
 
@@ -66,12 +66,12 @@ This will be how we test the browser build. This is just so we know stuff works.
 
 ```html
 <html>
-    <head>
-        <link rel="stylesheet" href="./build/client/main.css">
-    </head>
-    <body>
-        <script src="./build/client/main.js"></script>
-    </body>
+  <head>
+    <link rel="stylesheet" href="./build/client/main.css" />
+  </head>
+  <body>
+    <script src="./build/client/main.js"></script>
+  </body>
 </html>
 ```
 
@@ -81,10 +81,10 @@ As a first step we need to install a the basic dependencies to make this work.
 
 To do this we’ll need a couple of things:
 
-* [webpack](https://webpack.js.org/) (we’ll install a special version since at the time of writing v. 2 has not yet been publicly released)
-* [babel-loader](https://www.npmjs.com/package/babel-loader) (A webpack loader that uses babel to transform your code)
-* babel-core (This is a peer dependencies of babel-loader — the babel in babel-loader.)
-* babel-preset-es2015 (The preset which we want babel to use to compile our code)
+- [webpack](https://webpack.js.org/) (we’ll install a special version since at the time of writing v. 2 has not yet been publicly released)
+- [babel-loader](https://www.npmjs.com/package/babel-loader) (A webpack loader that uses babel to transform your code)
+- babel-core (This is a peer dependencies of babel-loader — the babel in babel-loader.)
+- babel-preset-es2015 (The preset which we want babel to use to compile our code)
 
 To install these:
 
@@ -197,7 +197,8 @@ The config for the css-loader looks like this:
 
 By default what the css-loader does when CSS Modules are turned on (that’s what `modules: true` does) is extract the css & and the selectors and make them available to you in javascript in the form of a string and a mapping of selectors.
 
-> 📢 Side-note: The whole point of CSS Modules is to ‘scope’ css. In order to do this the css-loader modifies your selectors in order to prevent selectors from clashing. This is so two separate css files could have the same selector without them overriding each-other. You can control how your selectors are modified by using the `localIdentName` option. `[hash:8]` outputs the first 8 characters of a hash of the path to the css file + the selector.
+[[note]]
+| 📢 The whole point of CSS Modules is to ‘scope’ css. In order to do this the css-loader modifies your selectors in order to prevent selectors from clashing. This is so two separate css files could have the same selector without them overriding each-other. You can control how your selectors are modified by using the `localIdentName` option. `[hash:8]` outputs the first 8 characters of a hash of the path to the css file + the selector.
 
 So anyways… by default the css-loader would output this (all comments from Webpack itself):
 
@@ -294,11 +295,11 @@ What you want on the server is ideally the selectors inlined without all the bun
 
 I’ve gone down the route of trying to use Webpack to build server-side code but found a number of things (this is just a selection) to be annoying:
 
-* It was surprisingly slow, even with a little project (since you need to generate source maps & then use [something like this](https://github.com/evanw/node-source-map-support).
+- It was surprisingly slow, even with a little project (since you need to generate source maps & then use [something like this](https://github.com/evanw/node-source-map-support).
 
-* Behave really weird with node globals such as `__dirname` and `__filename` (you have to tell Webpack to ignore them or it will set them to undefined)
+- Behave really weird with node globals such as `__dirname` and `__filename` (you have to tell Webpack to ignore them or it will set them to undefined)
 
-* You have to do some extra magic to tell Webpack to not bundle all your node_modules (since they are not always just javascript / bundle-able)
+- You have to do some extra magic to tell Webpack to not bundle all your node_modules (since they are not always just javascript / bundle-able)
 
 ### Enter Babel
 
@@ -396,9 +397,9 @@ Ok, we now have front-end and back-end builds working…
 
 But… there are still a few things missing:
 
-* How do we use sass?
-* How do we use autoprefixer?
-* How do we watch for changes & rebuild as needed?
+- How do we use sass?
+- How do we use autoprefixer?
+- How do we watch for changes & rebuild as needed?
 
 ---
 

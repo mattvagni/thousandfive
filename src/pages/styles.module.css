@@ -4,12 +4,11 @@
 }
 
 .title {
-  font-size: 2.75rem;
+  font-size: 48px;
   font-weight: bold;
   line-height: 1.2;
-  margin-bottom: 1.1rem;
+  margin-bottom: 16px;
 }
 
 .bio {
-  font-size: 1.1rem;
 }

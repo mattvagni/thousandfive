@@ -27,8 +27,9 @@ module.exports = {
                 warning: {
                   classes: 'warning',
                 },
-                info: {
-                  classes: 'info',
+                note: {
+                  title: 'optional',
+                  classes: 'note',
                 },
               },
             },
