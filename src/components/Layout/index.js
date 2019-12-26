@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import classnames from 'classnames';
 
@@ -6,30 +6,43 @@ import Header from '../Header';
 import Footer from '../Footer';
 import styles from './styles.module.css';
 
-let defaultTheme = 'light';
-const storageKey = 'theme';
+const themeKey = 'theme';
 const isBrowser = () => typeof window !== 'undefined';
 
-try {
+function getStorageTheme() {
   if (isBrowser()) {
-    defaultTheme = localStorage.getItem(storageKey);
-    console.log('setting default to', defaultTheme);
+    return localStorage.getItem(themeKey);
   }
-} catch (err) {
-  console.error(err);
+  return 'light';
 }
 
+function setStorageTheme(theme) {
+  if (isBrowser()) {
+    return localStorage.setItem(themeKey, theme);
+  }
+}
+
+const useTheme = () => {
+  const [theme, setTheme] = useState('light');
+
+  // On page load, set the theme
+  useEffect(() => {
+    setTheme(getStorageTheme());
+  }, []);
+
+  // When the client side theme changes, update local storage
+  useEffect(() => {
+    setStorageTheme(theme);
+  }, [theme, isBrowser]);
+
+  return [theme, setTheme];
+};
+
 const Layout = (props) => {
-  const [theme, setTheme] = useState(defaultTheme);
+  const [theme, setTheme] = useTheme();
 
   function toggleTheme() {
-    const newValue = theme === 'light' ? 'dark' : 'light';
-    console.log('setting theme to', newValue);
-    setTheme(newValue);
-    if (isBrowser()) {
-      localStorage.setItem(storageKey, newValue);
-    }
-    defaultTheme = newValue;
+    setTheme(theme === 'light' ? 'dark' : 'light');
   }
 
   return (
