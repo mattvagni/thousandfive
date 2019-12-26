@@ -4,6 +4,7 @@
   background: var(--lightBackgroundColor);
   font-size: 18px;
   transition: 150ms background linear;
+  min-height: 100vh;
 }
 
 .content {
