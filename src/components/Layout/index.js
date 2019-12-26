@@ -10,10 +10,11 @@ const themeKey = 'theme';
 const isBrowser = () => typeof window !== 'undefined';
 
 function getStorageTheme() {
+  let theme = 'light';
   if (isBrowser()) {
-    return localStorage.getItem(themeKey);
+    theme = localStorage.getItem(themeKey) || theme;
   }
-  return 'light';
+  return theme;
 }
 
 function setStorageTheme(theme) {
@@ -23,7 +24,7 @@ function setStorageTheme(theme) {
 }
 
 const useTheme = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(getStorageTheme());
 
   // On page load, set the theme
   useEffect(() => {
