@@ -13,6 +13,7 @@ const isBrowser = () => typeof window !== 'undefined';
 try {
   if (isBrowser()) {
     defaultTheme = localStorage.getItem(storageKey);
+    console.log('setting default to', defaultTheme);
   }
 } catch (err) {
   console.error(err);
@@ -23,6 +24,7 @@ const Layout = (props) => {
 
   function toggleTheme() {
     const newValue = theme === 'light' ? 'dark' : 'light';
+    console.log('setting theme to', newValue);
     setTheme(newValue);
     if (isBrowser()) {
       localStorage.setItem(storageKey, newValue);
