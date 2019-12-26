@@ -10,7 +10,8 @@ It’s currently still relatively hard to understand how to use CSS Modules on t
 
 For the sake of this I won’t be using React or anything like that. It’s completely irrelevant to how CSS Modules work & there are many great tutorials on how to use React on the server & client. I’ll instead use a super simple example file which literally just console.logs a bit of html with the right selectors. This, I think, makes it a lot easier to understand what’s going on since there are a lot fewer moving parts.
 
-> 📢 I will be using Webpack 2 because it’s the future — also it’s just nicer to configure loaders (no more crazy query strings).
+[[note]]
+|📢 I will be using Webpack 2 because it’s the future — also it’s just nicer to configure loaders (no more crazy query strings).
 
 ## What’s the goal?
 
@@ -566,7 +567,7 @@ Because autoprefixer only changes the actual css rule declarations and not the s
 
 This one is easy: install autoprefixer & the postcss-loader (both super standard, you’ll probably have used these before):
 
-```js
+```
 npm install --save autoprefixer postcss-loader
 ```
 
@@ -638,7 +639,7 @@ Just call Webpack & babel with `--watch` respectively 😊
 
 Simply add these two scripts to your package.json and run them in separate tabs:
 
-```js
+```json
 "scripts": {
   "build:client": "webpack --config webpack.config.js",
   "build:server": "BABEL_ENV=server babel src --out-dir ./build/server",

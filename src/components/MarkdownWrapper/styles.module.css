@@ -116,7 +116,7 @@
     font-family: var(--monoFontFamily);
     font-size: 0.8em;
     background: var(--mediumBackgroundColor);
-    padding: 4px 6px 3px;
+    padding: 2px 5px 1px;
     display: inline-block;
     border-radius: 3px;
   }
@@ -176,8 +176,8 @@
 
     /* Custom markdown blocks */
     & .custom-block {
-      margin: 32px 0;
-      padding: 16px;
+      margin: 24px 0;
+      padding: 24px;
       border-radius: 3px;
 
       &.warning {
@@ -187,8 +187,6 @@
       &.note {
         /* background: var(--mediumBackgroundColor); */
         border: 3px solid var(--mediumBackgroundColor);
-        padding: 32px;
-        margin: 24px -32px;
         border-radius: 6px;
       }
     }
@@ -291,12 +289,18 @@
       & pre[class='language-ts']::before,
       & pre[class='language-typescript']::before {
         content: 'ts';
-        background: #294f80;
+        background: #0077d6;
         color: #fff;
       }
 
       & pre[class='language-css']::before {
         content: 'css';
+        background: #f196b2;
+        color: #000;
+      }
+
+      & pre[class='language-sass']::before {
+        content: 'sass';
         background: #f30d6b;
         color: #fff;
       }
