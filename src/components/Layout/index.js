@@ -26,13 +26,17 @@ function setStorageTheme(theme) {
 const useTheme = () => {
   const [theme, setTheme] = useState(getStorageTheme());
 
+  console.log('initial theme:', theme);
+
   // On page load, set the theme
   useEffect(() => {
+    console.log('set state theme on render:', getStorageTheme());
     setTheme(getStorageTheme());
   }, []);
 
   // When the client side theme changes, update local storage
   useEffect(() => {
+    console.log('setting storage theme from state to storage', theme);
     setStorageTheme(theme);
   }, [theme]);
 
@@ -41,6 +45,8 @@ const useTheme = () => {
 
 const Layout = (props) => {
   const [theme, setTheme] = useTheme();
+
+  console.log('rendering layout', theme);
 
   function toggleTheme() {
     setTheme(theme === 'light' ? 'dark' : 'light');
