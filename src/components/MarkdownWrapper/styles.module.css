@@ -138,36 +138,48 @@
     & figure {
       margin: 32px 0;
 
+      @media (max-width: 1400px) {
+        margin: 32px -16px;
+      }
+
       & img {
         transform: translateX(-50%);
         position: relative;
         left: 50%;
         top: 0;
+        width: 100%;
       }
 
-      &.medium {
-        & img {
-          max-width: 900px;
-
-          @media (max-width: 900px) {
-            width: calc(100vw);
-          }
+      @media (min-width: 660px) {
+        &.medium,
+        &.large {
+          --margin: calc(((100vw - 660px) / 2) * -1);
+          margin-left: var(--margin);
+          margin-right: var(--margin);
         }
       }
 
-      &.large {
-        & img {
-          max-width: 1400px;
+      @media (min-width: 900px) {
+        &.medium {
+          max-width: 900px;
+          --margin: calc(((900px - 660px) / 2) * -1);
+          margin-left: var(--margin);
+          margin-right: var(--margin);
+        }
+      }
 
-          @media (max-width: 1400px) {
-            width: calc(100vw);
-          }
+      @media (min-width: 1400px) {
+        &.large {
+          max-width: 1400px;
+          --margin: calc(((1400px - 660px) / 2) * -1);
+          margin-left: var(--margin);
+          margin-right: var(--margin);
         }
       }
 
       & figcaption {
         color: var(--lightTextColor);
-        margin-top: 16px;
+        margin-top: 8px;
         font-size: 16px;
         text-align: center;
         font-style: italic;
