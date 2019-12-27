@@ -14,7 +14,7 @@ const Post = ({ data, location }) => {
         <Helmet>
           <title>{`1005 • ${post.frontmatter.title}`}</title>
         </Helmet>
-        <Link to="/" className={styles.backButton}>
+        <Link to="/" className={styles.backButton} aria-hidden tabIndex="-1">
           {'←'}
         </Link>
         <h1 className={styles.postTitle}>{post.frontmatter.title}</h1>
