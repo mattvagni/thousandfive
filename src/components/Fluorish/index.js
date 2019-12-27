@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import classnames from 'classnames';
-
 import styles from './styles.module.css';
 
 function getScreenWidth() {
@@ -17,58 +16,48 @@ function getScreenWidth() {
   };
 }
 
-class Fluorish extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isVisible: false,
-      x: 0,
-      y: 0,
-    };
+function Fluorish() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
 
-    this.onMouseMove = this.onMouseMove.bind(this);
-    this.onMouseLeave = this.onMouseLeave.bind(this);
-    this.onDeviceMotion = this.onDeviceMotion.bind(this);
-  }
+  const isModernMobile = useMemo(() => {
+    return window.DeviceOrientationEvent && 'ontouchstart' in window;
+  }, []);
 
-  componentDidMount() {
-    if (window.DeviceOrientationEvent && 'ontouchstart' in window) {
-      window.addEventListener('deviceorientation', this.onDeviceMotion);
-    } else {
-      document.body.addEventListener('mousemove', this.onMouseMove);
-      document.body.addEventListener('mouseleave', this.onMouseLeave);
+  useEffect(() => {
+    if (!isModernMobile) {
+      document.body.addEventListener('mousemove', onMouseMove);
+      document.body.addEventListener('mouseleave', onMouseLeave);
     }
-  }
 
-  componentWillUnmount() {
-    window.removeEventListener('deviceorientation', this.onDeviceMotion);
-    document.body.removeEventListener('mousemove', this.onMouseMove);
-    document.body.removeEventListener('mouseleave', this.onMouseLeave);
-  }
+    return () => {
+      document.body.removeEventListener('mousemove', onMouseMove);
+      document.body.removeEventListener('mouseleave', onMouseLeave);
+      window.removeEventListener('deviceorientation', onDeviceMotion);
+    };
+  }, [isModernMobile]);
 
-  onMouseMove(event) {
-    this.setState({
+  function onMouseMove(event) {
+    setIsVisible(true);
+    setCoordinates({
       x: event.clientX,
       y: event.clientY,
-      isVisible: true,
     });
   }
 
-  onMouseLeave() {
-    this.setState({ isVisible: false });
+  function onMouseLeave() {
+    setIsVisible(false);
   }
 
-  onDeviceMotion(event) {
-    this.setState({
+  function onDeviceMotion(event) {
+    setCoordinates({
       y: Math.floor(event.beta) * -10,
       x: Math.floor(event.gamma) * 10,
-      isVisible: true,
-      isMobile: true,
     });
   }
 
-  getSquareStyles() {
-    const { x, y } = this.state;
+  function getSquareStyles() {
+    const { x, y } = coordinates;
     const { width, height } = getScreenWidth();
 
     const relX = (x - width / 2) * 0.09;
@@ -79,8 +68,8 @@ class Fluorish extends Component {
     };
   }
 
-  getCircleStyles() {
-    const { x, y } = this.state;
+  function getCircleStyles() {
+    const { x, y } = coordinates;
     const { width, height } = getScreenWidth();
 
     const relX = (y - height / 2) * 0.04;
@@ -90,8 +79,8 @@ class Fluorish extends Component {
     };
   }
 
-  getLineStyles() {
-    const { x, y } = this.state;
+  function getLineStyles() {
+    const { x, y } = coordinates;
     const { width, height } = getScreenWidth();
 
     const relX = (x - width / 2) * 0.05;
@@ -102,26 +91,37 @@ class Fluorish extends Component {
     };
   }
 
-  render() {
-    const wrapperClasses = classnames(styles.wrapper, {
-      [styles.isVisible]: this.state.isVisible,
-      [styles.isMobile]: this.state.isMobile,
-    });
+  const wrapperClasses = classnames(styles.wrapper, {
+    [styles.isVisible]: isVisible || isModernMobile,
+  });
 
-    return (
-      <div className={wrapperClasses}>
-        <div className={styles.square} style={this.getSquareStyles()}>
-          <div className={styles.inner} />
-        </div>
-        <div className={styles.circle} style={this.getCircleStyles()}>
-          <div className={styles.inner} />
-        </div>
-        <div className={styles.line} style={this.getLineStyles()}>
-          <div className={styles.inner} />
-        </div>
-      </div>
-    );
+  function onWrapperClick() {
+    if (!isModernMobile) {
+      return;
+    }
+
+    DeviceOrientationEvent.requestPermission()
+      .then((response) => {
+        if (response === 'granted') {
+          window.addEventListener('deviceorientation', onDeviceMotion);
+        }
+      })
+      .catch(console.error);
   }
+
+  return (
+    <div className={wrapperClasses} aria-hidden onClick={onWrapperClick}>
+      <div className={styles.square} style={getSquareStyles()}>
+        <div className={styles.inner} />
+      </div>
+      <div className={styles.circle} style={getCircleStyles()}>
+        <div className={styles.inner} />
+      </div>
+      <div className={styles.line} style={getLineStyles()}>
+        <div className={styles.inner} />
+      </div>
+    </div>
+  );
 }
 
 export default Fluorish;
