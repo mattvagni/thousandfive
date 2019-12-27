@@ -34,7 +34,7 @@ const useTheme = () => {
   // When the client side theme changes, update local storage
   useEffect(() => {
     setStorageTheme(theme);
-  }, [theme, isBrowser]);
+  }, [theme]);
 
   return [theme, setTheme];
 };
