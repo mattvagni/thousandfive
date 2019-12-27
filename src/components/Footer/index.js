@@ -32,7 +32,7 @@ const Footer = (props) => (
         </span>
       ))}
     </div>
-    <ThemeToggleButton onToggle={props.onToggleTheme} theme={props.theme} />
+    <ThemeToggleButton />
   </div>
 );
 
