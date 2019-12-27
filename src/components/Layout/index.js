@@ -24,7 +24,7 @@ function setStorageTheme(theme) {
 }
 
 const useTheme = () => {
-  const [theme, setTheme] = useState(getStorageTheme());
+  const [theme, setTheme] = useState('light');
 
   console.log('initial theme:', theme);
 
