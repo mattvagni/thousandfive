@@ -20,7 +20,9 @@
   color: var(--highlightTextColor);
   transition: transform 200ms ease;
 
-  &:hover {
+  &:hover,
+  &:focus {
+    box-shadow: none;
     transform: translate3d(-10px, 0, 0);
   }
 }
