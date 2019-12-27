@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 import Helmet from 'react-helmet';
 import classnames from 'classnames';
 
+import { isBrowser } from '../../utils/isBrowser';
 import Header from '../Header';
 import Footer from '../Footer';
 import styles from './styles.module.css';
 
 const themeKey = 'theme';
-const isBrowser = () => typeof window !== 'undefined';
 
 function getStorageTheme() {
   let theme = 'light';

@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import classnames from 'classnames';
+import { isBrowser } from '../../utils/isBrowser';
 import styles from './styles.module.css';
 
 function getScreenWidth() {
@@ -21,6 +22,9 @@ function Fluorish() {
   const [coordinates, setCoordinates] = useState({ x: 0, y: 0 });
 
   const isModernMobile = useMemo(() => {
+    if (!isBrowser()) {
+      return false;
+    }
     return window.DeviceOrientationEvent && 'ontouchstart' in window;
   }, []);
 
