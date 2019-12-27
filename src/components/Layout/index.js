@@ -8,9 +8,10 @@ import Footer from '../Footer';
 import styles from './styles.module.css';
 
 const themeKey = 'theme';
+const defaultTheme = 'light';
 
 function getStorageTheme() {
-  let theme = 'light';
+  let theme = defaultTheme;
   if (isBrowser()) {
     theme = localStorage.getItem(themeKey) || theme;
   }
@@ -24,19 +25,15 @@ function setStorageTheme(theme) {
 }
 
 const useTheme = () => {
-  const [theme, setTheme] = useState('light');
-
-  console.log('initial theme:', theme);
+  const [theme, setTheme] = useState(defaultTheme);
 
   // On page load, set the theme
   useEffect(() => {
-    console.log('set state theme on render:', getStorageTheme());
     setTheme(getStorageTheme());
   }, []);
 
   // When the client side theme changes, update local storage
   useEffect(() => {
-    console.log('setting storage theme from state to storage', theme);
     setStorageTheme(theme);
   }, [theme]);
 
@@ -45,8 +42,6 @@ const useTheme = () => {
 
 const Layout = (props) => {
   const [theme, setTheme] = useTheme();
-
-  console.log('rendering layout', theme);
 
   function toggleTheme() {
     setTheme(theme === 'light' ? 'dark' : 'light');
