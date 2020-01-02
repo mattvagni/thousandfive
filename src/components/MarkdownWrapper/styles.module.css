@@ -190,7 +190,7 @@
     & .custom-block {
       margin: 24px 0;
       padding: 24px;
-      border-radius: 3px;
+      border-radius: 6px;
 
       &.warning {
         background: var(--warningBackgroundColor);
@@ -199,7 +199,23 @@
 
       &.note {
         border: 3px solid var(--mediumBackgroundColor);
-        border-radius: 6px;
+      }
+
+      &.company-echo {
+        border: 3px solid var(--mediumBackgroundColor);
+        display: flex;
+        align-items: center;
+
+        &::before {
+          flex-shrink: 0;
+          content: '';
+          display: block;
+          width: 24px;
+          height: 24px;
+          background-image: url('./images/echo-logo.svg');
+          background-size: cover;
+          margin: 0 16px 0 0;
+        }
       }
     }
 

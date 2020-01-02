@@ -28,8 +28,10 @@ module.exports = {
                   classes: 'warning',
                 },
                 note: {
-                  title: 'optional',
                   classes: 'note',
+                },
+                'company-echo': {
+                  classes: 'company-echo',
                 },
               },
             },

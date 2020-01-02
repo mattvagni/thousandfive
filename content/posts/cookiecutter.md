@@ -1,5 +1,5 @@
 ---
-title:  "npm install cookiecutter"
+title: 'npm install cookiecutter'
 date: 2017-05-28
 ---
 
@@ -24,17 +24,17 @@ Check out the [docs on github](https://github.com/mattvagni/cookiecutter).
 
 👍 Cookiecutter supports:
 
-* Multiple templates with the ability to pick which template to use via the CLI.
-* Multiple fields per template with the ability to specify them from the CLI.
-* Custom validation & error messages for fields.
-* Any type of file or folder structure.
+- Multiple templates with the ability to pick which template to use via the CLI.
+- Multiple fields per template with the ability to specify them from the CLI.
+- Custom validation & error messages for fields.
+- Any type of file or folder structure.
 
 👎 Cookiecutter **doesn't** support:
 
-* Conditionals or any other logic in templates. (You can however achieve similar things by having multiple templates).
-* Bootstrapping a project from scratch (i.e "I have no code but need to set a project up").
-* Adding code to existing files.
-* Lots of other things Yeoman does support. Cookiecutter is really quite simple & isn't suited for complex use-cases.
+- Conditionals or any other logic in templates. (You can however achieve similar things by having multiple templates).
+- Bootstrapping a project from scratch (i.e "I have no code but need to set a project up").
+- Adding code to existing files.
+- Lots of other things Yeoman does support. Cookiecutter is really quite simple & isn't suited for complex use-cases.
 
 ---
 
