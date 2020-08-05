@@ -5,7 +5,9 @@
   --baseFontFace: 'IBM Plex Sans';
   --baseFontFamily: 'IBM Plex Sans', 'system-ui', sans-serif;
   --monoFontFamily: 'Menlo', 'Source Code Pro', serif;
-  --pageWidth: 760px;
+  --pageWidth: 700px;
+  --mediumImageWidth: 900px;
+  --largeImageWidth: 1200px;
 }
 
 .light {

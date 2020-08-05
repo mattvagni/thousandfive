@@ -133,14 +133,11 @@
     }
   }
 
+
   & :global {
     /* Images */
     & figure {
       margin: 32px 0;
-
-      @media (max-width: 1400px) {
-        margin: 32px -16px;
-      }
 
       & img {
         transform: translateX(-50%);
@@ -150,10 +147,18 @@
         width: 100%;
       }
 
-      @media (min-width: var(--pageWidth)) {
+      @media (max-width: 700px) {
+        & {
+          --margin: -16px;
+          margin-left: var(--margin);
+          margin-right: var(--margin);
+        }
+      }
+
+      @media (min-width: 700px) {
         &.medium,
         &.large {
-          --margin: calc(((100vw - var(--pageWidth)) / 2) * -1);
+          --margin: calc((100vw - var(--pageWidth)) / 2 * -1);
           margin-left: var(--margin);
           margin-right: var(--margin);
         }
@@ -162,17 +167,17 @@
       @media (min-width: 900px) {
         &.medium,
         &.large {
-          max-width: 900px;
-          --margin: calc(((900px - var(--pageWidth)) / 2) * -1);
+          max-width: var(--mediumImageWidth);
+          --margin: calc((var(--mediumImageWidth) - var(--pageWidth)) / 2 * -1);
           margin-left: var(--margin);
           margin-right: var(--margin);
         }
       }
 
-      @media (min-width: 1400px) {
+      @media (min-width: 1200px) {
         &.large {
-          max-width: 1400px;
-          --margin: calc(((1400px - var(--pageWidth)) / 2) * -1);
+          max-width: var(--largeImageWidth);
+          --margin: calc(((var(--largeImageWidth) - var(--pageWidth)) / 2) * -1);
           margin-left: var(--margin);
           margin-right: var(--margin);
         }

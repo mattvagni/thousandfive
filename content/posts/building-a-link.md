@@ -14,7 +14,7 @@ This post tries to summarise some of the high-level considerations when building
 
 To have a foundation on which to discuss some high-level principles let’s consider the four versions of a link below:
 
-<figure class="large">
+<figure class="medium">
   <img src="../images/4-links.png"/>
 </figure>
 
