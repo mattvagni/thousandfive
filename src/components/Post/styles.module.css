@@ -1,13 +1,13 @@
 .postTitle {
   font-size: 40px;
   line-height: 1.2;
-  margin: 8px 0 32px 0;
+  margin: 8px 0 16px 0;
   font-weight: bold;
 }
 
 .postDate {
   color: var(--lightTextColor);
-  margin-bottom: 32px;
+  margin-bottom: 48px;
 }
 
 .backButton {
