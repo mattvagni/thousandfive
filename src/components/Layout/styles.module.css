@@ -8,7 +8,7 @@
 }
 
 .content {
-  max-width: 660px;
+  max-width: var(--pageWidth);
   margin: 0 auto;
   padding: 16px;
 }

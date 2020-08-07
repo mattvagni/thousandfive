@@ -29,6 +29,8 @@ Check out the [docs on github](https://github.com/mattvagni/cookiecutter).
 - Custom validation & error messages for fields.
 - Any type of file or folder structure.
 
+<br/>
+
 👎 Cookiecutter **doesn't** support:
 
 - Conditionals or any other logic in templates. (You can however achieve similar things by having multiple templates).
